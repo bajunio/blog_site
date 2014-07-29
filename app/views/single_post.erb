@@ -10,7 +10,7 @@
 <div class='container'>
 
 <h3>Comments</h3>
-
+<h5><a href="/posts/<%=@post.id%>/comments/new">Post a comment!</a></h5>
 <ul>
   <% @comments.each do |comment| %>
     <li><%= comment.body %></li>
