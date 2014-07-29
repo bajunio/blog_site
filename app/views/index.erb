@@ -2,10 +2,10 @@
 
   <h1>Welcome to my blog!</h1>
 
-  <h3>Topics</h3>
+  <h3>Entries</h3>
   <ul>
-    <% @topics.each do |user| %>
-    <li><%= user.user_name %></li>
+    <% @entries.each do |entry| %>
+    <li><%= entry.title %></li>
     <%end%>
   </ul>
 
