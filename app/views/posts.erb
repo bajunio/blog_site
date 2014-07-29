@@ -1,0 +1,12 @@
+<div class="container">
+
+  <h1>Welcome to my blog!</h1>
+
+  <h3>Posts</h3>
+  <ul>
+    <% @posts.each do |post| %>
+    <li><a href="/posts/<%=post.id%>"><%= post.title %></a> - Comments: <%= post.comments.count %></li>
+    <%end%>
+  </ul>
+
+</div>

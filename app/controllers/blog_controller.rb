@@ -1,6 +1,10 @@
 get '/' do
-  @posts = Post.all
   erb :index
+end
+
+get '/posts' do
+  @posts = Post.all
+  erb :posts
 end
 
 get '/posts/:id' do |id|
