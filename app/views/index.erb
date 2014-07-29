@@ -1,1 +1,12 @@
-hello brian
+<div class="container">
+
+  <h1>Welcome to my blog!</h1>
+
+  <h3>Topics</h3>
+  <ul>
+    <% @topics.each do |user| %>
+    <li><%= user.user_name %></li>
+    <%end%>
+  </ul>
+
+</div>
