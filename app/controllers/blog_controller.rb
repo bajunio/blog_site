@@ -1,11 +1,11 @@
 get '/' do
-  @users = User.all
+  @post = Post.all
   erb :index
 end
 
 get '/posts/:id' do |id|
-  @posts = Post.find(user_id: id)
-  erb :posts
+  @post = Post.find(id)
+  erb :single_post
 end
 
 
