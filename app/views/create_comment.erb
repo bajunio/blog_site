@@ -1,0 +1,13 @@
+<div class='container'>
+
+  <h1>Post a new comment!</h1>
+  <br>
+  <h3><%= @post.title %></h3>
+  <br>
+  <p><%= @post.body %></p>
+  <br>
+  <form action="/posts/<%=@post.id%>/comment/new" method='post'>
+    Comment:<input type='text' name='body'>
+    <input type='submit'>
+  </form>
+</div>
