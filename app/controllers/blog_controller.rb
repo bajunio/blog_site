@@ -1,5 +1,6 @@
 get '/' do
-  erb :index
+  # erb :index
+  redirect '/posts'
 end
 
 get '/posts' do
@@ -29,7 +30,14 @@ get '/user/registration' do
 end
 
 post '/user/registration' do
-  User.create(params)
+  password_salt = BCrypt::Engine.generate_salt
+  password_hash = BCrypt::Engine.hash_secret(params[:password], password_salt)
+
+  user = User.create(user_name: params[:user_name], email: params[:email],
+                  password_hash: password_hash, password_salt: password_salt)
+
+  session[:id] = user.id if user.valid?
+
   redirect '/'
 end
 

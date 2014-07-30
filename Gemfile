@@ -10,6 +10,7 @@ gem 'sinatra-contrib'
 
 # Password
 gem 'bcrypt'
+# gem 'pony'
 
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
