@@ -24,3 +24,25 @@ post '/posts/:id/comment/new' do |id|
   redirect "/posts/#{post.id}"
 end
 
+get '/user/registration' do
+  erb :user_registration
+end
+
+post '/user/registration' do
+  User.create(params)
+  redirect '/'
+end
+
+get '/user/login' do
+  erb :user_login
+end
+
+post '/user/login' do
+  user = User.find_by_user_name(params[:user_name])
+  if user && params[:password_hash] == user.password_hash
+    session[:id] = user.id
+    redirect '/posts'
+  else
+    redirect '/'
+  end
+end
